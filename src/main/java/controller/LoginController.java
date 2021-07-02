@@ -36,24 +36,20 @@ public class LoginController {
         return mav;
     }
 
-    @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
+    @RequestMapping(value = "book/loginProcess", method = RequestMethod.POST)
     public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
             @ModelAttribute("login") Login login) {
-        ModelAndView email = null;
-
+        ModelAndView u = null;
         User user = userdao.validateUser(login);
-
         if (null != user) {
-            email = new ModelAndView("user/welcome");
-            email.addObject("email", user.getEmail());
-            email.addObject("password", user.getPassword());
+            u = new ModelAndView("./book/header");
+            u.addObject("email", user.getEmail());
+            u.addObject("password", user.getPassword());
         } else {
-            email = new ModelAndView("user/login");
-            JFrame frame = new JFrame("Swing Tester");
-            JOptionPane.showMessageDialog(frame,
-                        "Email or password error","",
-                        JOptionPane.ERROR_MESSAGE);
+            u = new ModelAndView("user/login");
         }
-        return email;
+        return u;
     }
+
+    
 }

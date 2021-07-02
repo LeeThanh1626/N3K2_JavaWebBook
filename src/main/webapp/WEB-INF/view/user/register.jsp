@@ -17,7 +17,6 @@
     <body>
         <h1 >Đăng Ký!</h1>
         <form id="regForm" modelattribute="User" action="./registerProcess.html" method="post">
-
             <table align="center">
                 <tr>
                     <td>

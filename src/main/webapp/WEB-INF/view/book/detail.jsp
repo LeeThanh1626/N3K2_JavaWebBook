@@ -13,9 +13,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <h1>Thông tin chi tiết</h1>
-
+    <%@include file="./header.jsp" %>
     <body>
-        
+
         <div class="row row-cols-1 row-cols-md-5">
             <div class="col mb-4 d-flex align-items-start flex-column bd-highlight mb-3">
                 <div class="card h-100">

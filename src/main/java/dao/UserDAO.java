@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import model.Login;
 import org.springframework.jdbc.core.JdbcTemplate;
 import model.User;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -45,9 +46,12 @@ public class UserDAO {
         }
     }
 
+    public User Search_User(String email) {
+        String sql = "select * from users where email like ?";
+        return jdbctemplate.queryForObject(sql, new Object[]{"%"+email+"%"}, new BeanPropertyRowMapper<>(User.class));
+    }
+    
     public void NapTaiKhoan(User user) {
-//         String sql = String.format("insert into users(email, password) values('%s','%s')", user.getEmail(), user.getPassword());
-//            jdbctemplate.update(sql);
         String sql1 = "select * from users where email='" + user.getEmail() + "'";
         List<User> users = jdbctemplate.query(sql1, new UserMapper());
         if (!users.isEmpty()) {

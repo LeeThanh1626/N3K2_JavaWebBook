@@ -15,10 +15,9 @@
 
     </head>
     <body>
-        
-        <h1 >Đăng Nhập!</h1>
-        <form id="regForm" modelattribute="User" action="./loginProcess.html" method="post">
 
+        <h1 >Đăng Nhập!</h1>
+        <form id="regForm" modelattribute="User" action="./book/loginProcess.html" method="post">
             <table align="center">
                 <tr>
                     <td>
@@ -38,7 +37,7 @@
                 </tr>
             </table>
         </form>
-        
+
     </body>
-    
+
 </html>

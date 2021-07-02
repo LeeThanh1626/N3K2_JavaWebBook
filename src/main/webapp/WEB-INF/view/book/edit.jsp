@@ -12,8 +12,8 @@
         <title>JSP Page</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
+    <%@include file="./header.jsp" %>
     <body>
-       
         <h1>Thông Tin Sách!</h1>
         <form action="./save.html" method="POST">
             Tên Sách<input type="text" name="name" value="${b.name}"/> <br/>

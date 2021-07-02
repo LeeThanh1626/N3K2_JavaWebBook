@@ -76,10 +76,19 @@ public class BookDAO {
         String sql = "select * from allbook where name like ?";
         return template.queryForObject(sql, new Object[]{"%"+name+"%"}, new BeanPropertyRowMapper<>(Book.class));
     }
+       
+    public List<Book> Search_Book(String name) {
+        String sql = "select * from allbook where name like ?";
+        return template.query(sql, new Object[]{"%"+name+"%"}, new BeanPropertyRowMapper<>(Book.class));
+    }
     
-    public void register(User user) {
-
-        String sql =String.format("insert into users(email, password) values('%s','%s')",user.getEmail(), user.getPassword());
-        template.update(sql);
+    public int InsertCart(String name){
+        Book temp = DetailBook(name);
+        String sql = String.format("Insert into cart (name, pic, price) values('%s', '%s', '%f')",temp.getName(), temp.getPic(), temp.getPrice());
+        return template.update(sql);
+    }
+    public List<Book> allCart() {
+        String sql = "select * from cart";
+        return template.query(sql, new BeanPropertyRowMapper<>(Book.class));
     }
 }

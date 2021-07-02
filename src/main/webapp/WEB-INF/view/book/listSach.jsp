@@ -13,6 +13,7 @@
         <title>JSP Page</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
+    <%@include file="./header.jsp" %>
     <body>
         <h1>Danh Sách Book</h1><hr/>
         <div>
@@ -26,17 +27,17 @@
                         <div class="card-body">
                             <img src="../AllBook/${b.pic}"/>
                         </div>
-                    </div>  
-                    <div class="p-4 bd-highlight">
-                        <h5 class="card-title"> ${b.name}</h5>
-                        <p class="card-title"> ${b.price}</p>
-                    </div>
-                    <div>
-                        <a href="./detail.html?name=${b.name}">Chi Tiết</a>
-                        <a href="./edit.html?name=${b.name}">Sửa</a>
-                        <a href="./delete.html?name=${b.name}" onclick="return confirm('Ban co chac chan muon xoa?')">Xóa</a>
-                        <a href="./cart.html?name=${b.name}">Thêm Vào Giỏ Hàng</a>
-                    </div>
+                        <div class="p-4 bd-highlight">
+                            <h5 class="card-title"> ${b.name}</h5>
+                            <p class="card-title"> ${b.price}</p>
+                        </div>
+                        <div>
+                            <a href="./detail.html?name=${b.name}">Chi Tiết</a>
+                            <a href="./edit.html?name=${b.name}">Sửa</a>
+                            <a href="./delete.html?name=${b.name}" onclick="return confirm('Ban co chac chan muon xoa?')">Xóa</a>
+                            <a href="./addcart.html?name=${b.name}">Thêm Vào Giỏ Hàng</a>
+                        </div>
+                    </div>                 
                 </div> 
             </div>
         </c:forEach>
