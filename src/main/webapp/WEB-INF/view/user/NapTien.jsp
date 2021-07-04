@@ -11,15 +11,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <%@include file="../header.jsp" %>
+    <%@include file="../book/header.jsp" %>
     <body>
         <table>
             <tr>
-                <td>Welcome ${u.email}</td>
+                <td>Welcome ${email}</td>
             </tr>    
             
         </table>
-        <form id="regForm" modelattribute="User" action="./XacNhan.html?email=${u.email}&&password=${u.password}" method="POST">
+        <form id="regForm" modelattribute="User" action="./XacNhan.html?email=${email}&&password=${password}" method="GET">
             <table align="center">
                 <tr>
                     <td>

@@ -25,17 +25,17 @@
                 <div class="col mb-4 d-flex align-items-start flex-column bd-highlight mb-3">
                     <div class="card h-100">
                         <div class="card-body">
-                            <img src="../AllBook/${b.pic}"/>
+                            <img src="./AllBook/${b.pic}"/>
                         </div>
                         <div class="p-4 bd-highlight">
                             <h5 class="card-title"> ${b.name}</h5>
                             <p class="card-title"> ${b.price}</p>
                         </div>
                         <div>
-                            <a href="./detail.html?name=${b.name}">Chi Tiết</a>
-                            <a href="./edit.html?name=${b.name}">Sửa</a>
-                            <a href="./delete.html?name=${b.name}" onclick="return confirm('Ban co chac chan muon xoa?')">Xóa</a>
-                            <a href="./addcart.html?name=${b.name}">Thêm Vào Giỏ Hàng</a>
+                            <a href="./detail.html?id=${b.id}">Chi Tiết</a>
+                            <a href="./edit.html?id=${b.id}">Sửa</a>
+                            <a href="./delete.html?id=${b.id}" onclick="return confirm('Ban co chac chan muon xoa?')">Xóa</a>
+                            <a href="./addcart.html?id=${b.id}">Thêm Vào Giỏ Hàng</a>
                         </div>
                     </div>                 
                 </div> 

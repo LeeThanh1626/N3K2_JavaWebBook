@@ -52,10 +52,10 @@ public class UserDAO {
     }
     
     public void NapTaiKhoan(User user) {
-        String sql1 = "select * from users where email='" + user.getEmail() + "'";
-        List<User> users = jdbctemplate.query(sql1, new UserMapper());
-        if (!users.isEmpty()) {
-            String sql = String.format("UPDATE users set money='%f' where email='%s' and password = '%s'",user.getMoney(), user.getEmail(),user.getPassword());
+        User u = Search_User(user.getEmail());
+        if (u.getId()!=0) {
+            float newmoney = (float) (u.getMoney() + user.getMoney());
+            String sql = String.format("UPDATE users set money='%f' where email='%s' and password = '%s'",newmoney, user.getEmail(),user.getPassword());
             jdbctemplate.update(sql);
         }
     }
@@ -70,7 +70,6 @@ public class UserDAO {
 }
 
 class UserMapper implements RowMapper<User> {
-
     public User mapRow(ResultSet rs, int arg1) throws SQLException {
         User user = new User();
         user.setEmail(rs.getString("email"));

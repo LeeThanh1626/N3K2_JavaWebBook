@@ -26,23 +26,23 @@
                     </form>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto justify-content-center">
-                            <li class="nav-item">
-                                <a class="nav-link" href="list.html?email=${email}">Tất cả sản phẩm</a>
+                            <li class="nav-item">       
+                                <a class="nav-link" href="list.html">Tất cả sản phẩm</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../register.html">Đăng Ký</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../login.html">Đăng Nhập</a>
+                                <a class="nav-link" href="./logout.html">Đăng Xuất</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="add.html">Thêm Sách</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="cart.html">Giỏ hàng</a>
+                                <a class="nav-link" href="listcart.html">Giỏ hàng</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../NapTien.html?email=${email}">Nạp Tiền</a>
+                                <a class="nav-link" href="./NapTien.html">Nạp Tiền</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./TrangCaNhan.html">Trang Cá Nhân</a>
                             </li>
                             <li>
                                 <a class="nav-link">Welcome ${email}</a> 

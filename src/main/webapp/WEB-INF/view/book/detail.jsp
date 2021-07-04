@@ -20,9 +20,9 @@
             <div class="col mb-4 d-flex align-items-start flex-column bd-highlight mb-3">
                 <div class="card h-100">
                     <div class="card-body">
-                        <img src="../AllBook/${b.pic}"/>
-                        <img src="../AllBook/${b.pic2}"/>
-                        <img src="../AllBook/${b.pic3}"/>
+                        <img src="./AllBook/${b.pic}"/>
+                        <img src="./AllBook/${b.pic2}"/>
+                        <img src="./AllBook/${b.pic3}"/>
                     </div>
                 </div>  
                 <div class="p-4 bd-highlight">

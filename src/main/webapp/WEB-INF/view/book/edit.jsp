@@ -16,13 +16,14 @@
     <body>
         <h1>Thông Tin Sách!</h1>
         <form action="./save.html" method="POST">
+            <input hidden="id" type="text" name="id" value="${b.id}">
             Tên Sách<input type="text" name="name" value="${b.name}"/> <br/>
             Giá Tiền: <input type="text" name="price" value="${b.price}"/> 
             <br/>
             Hình Ảnh:<div>
-                <img name="pic" src="../AllBook/${b.pic}"/>
-                <img name="pic2" src="../AllBook/${b.pic2}"/>
-                <img name="pic3" src="../AllBook/${b.pic3}"/>
+                <img name="pic" src="./AllBook/${b.pic}"/>
+                <img name="pic2" src="./AllBook/${b.pic2}"/>
+                <img name="pic3" src="./AllBook/${b.pic3}"/>
             </div>
             <br/>
             Nội Dung: 

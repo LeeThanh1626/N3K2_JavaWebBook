@@ -6,10 +6,13 @@
 package controller;
 
 import dao.UserDAO;
+import java.io.IOException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import model.Book;
 import model.Login;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,27 +32,34 @@ public class LoginController {
     @Autowired
     UserDAO userdao;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "login", method = RequestMethod.GET)
     public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView("user/login");
         mav.addObject("login", new Login());
         return mav;
     }
 
-    @RequestMapping(value = "book/loginProcess", method = RequestMethod.POST)
+    @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
     public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
-            @ModelAttribute("login") Login login) {
+            @ModelAttribute("login") Login login) throws IOException {
         ModelAndView u = null;
         User user = userdao.validateUser(login);
         if (null != user) {
             u = new ModelAndView("./book/header");
             u.addObject("email", user.getEmail());
             u.addObject("password", user.getPassword());
+            //lưu cookie
+            Cookie uc = new Cookie("userC", user.getEmail());
+            Cookie pc = new Cookie("passC", user.getPassword());
+            uc.setMaxAge(60 * 60 * 24 * 360);
+            pc.setMaxAge(60 * 60 * 24 * 360);
+            //lưu cookie lên chrome
+            response.addCookie(uc);
+            response.addCookie(pc);
         } else {
-            u = new ModelAndView("user/login");
+            JOptionPane.showMessageDialog(null, "Email or password error");
+            u = new ModelAndView("header");
         }
         return u;
     }
-
-    
 }

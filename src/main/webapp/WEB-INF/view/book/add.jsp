@@ -16,6 +16,7 @@
     <body>
         <h1>Thông Tin Sách Cần Thêm!</h1>
         <form action="./save.html" method="POST">
+            <input hidden="id" type="text" name="id" value="0">
             Tên Sách<input type="text" name="name"/> <br/>
             Giá Tiền: <input type="text" name="price"/> 
             <br/>
