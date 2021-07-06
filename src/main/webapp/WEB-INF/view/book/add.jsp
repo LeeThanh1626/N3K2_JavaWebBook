@@ -15,26 +15,26 @@
     <%@include file="./header.jsp" %> 
     <body>
         <h1>Thông Tin Sách Cần Thêm!</h1>
-        <form action="./save.html" method="POST">
+
+        <form action="./upload.html" method="POST" enctype="multipart/form-data">
             <input hidden="id" type="text" name="id" value="0">
             Tên Sách<input type="text" name="name"/> <br/>
             Giá Tiền: <input type="text" name="price"/> 
             <br/>
-            <%--
-            Hình Ảnh:<div>
-                <img name="pic" src="../AllBook/${b.pic}"/>
-                <img name="pic2" src="../AllBook/${b.pic2}"/>
-                <img name="pic3" src="../AllBook/${b.pic3}"/>
-            </div>
-            --%>
+            Hình Ảnh: <br/>  
+            Image1:<input type="file" id="pic" name="pic">
             <br/>
+            Image2:<input type="file" id="pic2" name="pic2">
+            <br/>
+            Image3:<input type="file" id="pic3" name="pic3">
+            <br/> 
             Nội Dung: 
             <div>
                 <textarea type="text" name="content" rows="10" cols ="90"></textarea>
             </div><br/>
-            Classify:  <input type="text" name="classify"/> <br/>
             <input type="submit" value="Cap Nhat"/>
         </form>
-    </body>
-    
+    </form>
+</body>
+
 </html>

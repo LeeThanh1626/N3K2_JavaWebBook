@@ -15,22 +15,21 @@
     <%@include file="./header.jsp" %>
     <body>
         <h1>Thông Tin Sách!</h1>
-        <form action="./save.html" method="POST">
+        <form action="./upload.html" method="POST" enctype="multipart/form-data">           
             <input hidden="id" type="text" name="id" value="${b.id}">
             Tên Sách<input type="text" name="name" value="${b.name}"/> <br/>
             Giá Tiền: <input type="text" name="price" value="${b.price}"/> 
-            <br/>
+            <br/>         
             Hình Ảnh:<div>
-                <img name="pic" src="./AllBook/${b.pic}"/>
-                <img name="pic2" src="./AllBook/${b.pic2}"/>
-                <img name="pic3" src="./AllBook/${b.pic3}"/>
+                <img  src="./AllBook/${b.pic}"/>                
+                <img  src="./AllBook/${b.pic2}"/>   
+                <img  src="./AllBook/${b.pic3}"/>               
             </div>
-            <br/>
+            <br/>           
             Nội Dung: 
             <div>
                 <textarea type="text" name="content" rows="10" cols ="90">${b.content}</textarea>
-            </div><br/>
-            Classify:  <input type="text" name="classify" value="${b.classify}"/> <br/>
+            </div><br/>       
             <input type="submit" value="Cap Nhat"/>
         </form>
     </body>

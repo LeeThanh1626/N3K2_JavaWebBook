@@ -16,9 +16,6 @@
     <%@include file="./header.jsp" %>
     <body>
         <h1>Danh Sách Book</h1><hr/>
-        <div>
-            <div><a href="./add.html">Thêm Sách</a></div>            
-        </div>
         <hr/>
         <c:forEach var="b" items="${list}"> 
             <div class="row row-cols-1 row-cols-md-5">
