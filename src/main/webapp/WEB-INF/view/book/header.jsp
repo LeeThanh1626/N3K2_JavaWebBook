@@ -10,48 +10,43 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./AllBook/css/header1.css">
     </head>
-    <body>
-        <div class="mx-auto">
-            <div class="mx-auto">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand mb-0 h1" href="list.html">Sách Store</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <form action="listSearch.html" method="GET">
-                        Tên Sách<input type="text" name="name"/>
-                        <input margin="10,0,0,0" type="submit" value="Tim Kiem"/>
-                    </form>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto justify-content-center">
-                            <li class="nav-item">       
-                                <a class="nav-link" href="list.html">Tất cả sản phẩm</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./logout.html">Đăng Xuất</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="add.html">Thêm Sách</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="listcart.html">Giỏ hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./NapTien.html">Nạp Tiền</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="./TrangCaNhan.html">Trang Cá Nhân</a>
-                            </li>
-                            <li>
-                                <a class="nav-link">Welcome ${email}</a> 
-                            </li>
-
-                        </ul>
+    <body style="overflow-y: scroll;
+          overflow-x: hidden;">
+        <header>
+            <div class="container-flux">
+                <a href="list.html"><img class="img" src="./AllBook/logo.svg" alt="" ></a>
+                <form action="listSearch.html" method="GET">
+                    <div class="group">
+                        <input type="search" placeholder="Tìm kiếm sách" name="name"/>
+                        <button title="Tìm sách" class="search-magnifier btn" type="submit">Tìm sách</button>
                     </div>
-                </nav>
+                </form>
+                <div class="login">
+                    <a id="a" >Welcome ${email}</a> 
+                    <a id="a" href="./logout.html">Đăng Xuất</a>
+                </div>
             </div>
-            <div class="container" >
-                </body>
-                </html>
+        </header>
+        <div class="topnav">
+
+            <a class="active"  href="list.html">Tất cả sản phẩm</a>
+
+            <a  href="add.html">Thêm Sách</a>
+
+            <a  href="./NapTien.html">Nạp Tiền</a>
+
+            <a href="./TrangCaNhan.html">Trang Cá Nhân</a>
+            <div class="right">
+                
+                    
+                
+                <a  href="listcart.html"><img style="width: 20px;height: 20px;" src="./AllBook/shopping-cart.svg"> Giỏ hàng</a>
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

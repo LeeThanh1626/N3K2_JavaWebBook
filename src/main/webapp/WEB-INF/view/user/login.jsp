@@ -11,33 +11,33 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="./AllBook/css/index.css">
     </head>
-    <body>
+    <body style="overflow-y: scroll;
+          overflow-x: hidden;">
+        <section>
+            <%@include file="../header.jsp" %> 
+        </section>
+        <section>
+            <h1>Đăng Nhập</h1>
+            <form id="regForm" modelattribute="User" action="./loginProcess.html" method="post">
+                <div>
+                    <label for="uname"><b>Username: </b></label>
+                    <input type="text" placeholder="Nhập tên đăng nhập" name="email" required>
+                </div>
 
-        <h1 >Đăng Nhập!</h1>
-        <form id="regForm" modelattribute="User" action="./loginProcess.html" method="post">
-            <table align="center">
-                <tr>
-                    <td>
-                        Email Đăng Nhập: <input type="text" name="email"/> 
-                    </td> 
-                </tr>
-                <tr>
-                    <td>
-                        Mật Khẩu: <input type="password" name="password"/>
-                    </td>   
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="Đăng Nhập"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
+                <div >
+                    <label for="psw"><b>Password: </b></label>
+                    <input type="password" placeholder="Nhập mật khẩu" name="password" required>
 
+                </div>
+                <button style="margin-left: 250px" type="submit">Login</button>
+
+            </form>
+        </section>
+        <footer style="margin-top: 30px">
+            <%@include file="../footer.jsp" %>  
+        </footer>
     </body>
 
 </html>
