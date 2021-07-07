@@ -38,10 +38,7 @@
             <a  href="./NapTien.html">Nạp Tiền</a>
 
             <a href="./TrangCaNhan.html">Trang Cá Nhân</a>
-            <div class="right">
-                
-                    
-                
+            <div class="right">     
                 <a  href="listcart.html"><img style="width: 20px;height: 20px;" src="./AllBook/shopping-cart.svg"> Giỏ hàng</a>
             </div>
         </div>

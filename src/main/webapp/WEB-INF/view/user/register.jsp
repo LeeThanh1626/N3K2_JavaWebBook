@@ -31,7 +31,7 @@
                     <input type="password" placeholder="Nhập mật khẩu" name="password" required>
 
                 </div>
-                <button style="margin-left: 250px" type="submit">Login</button>
+                <button style="margin-left: 250px" type="submit">Register</button>
 
             </form>
         </section>
