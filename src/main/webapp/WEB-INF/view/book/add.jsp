@@ -10,31 +10,52 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./AllBook/css/index.css">
     </head>
-    <%@include file="./header.jsp" %> 
     <body>
-        <h1>Thông Tin Sách Cần Thêm!</h1>
-        <form action="./save.html" method="POST">
-            <input hidden="id" type="text" name="id" value="0">
-            Tên Sách<input type="text" name="name"/> <br/>
-            Giá Tiền: <input type="text" name="price"/> 
-            <br/>
-            <%--
-            Hình Ảnh:<div>
-                <img name="pic" src="../AllBook/${b.pic}"/>
-                <img name="pic2" src="../AllBook/${b.pic2}"/>
-                <img name="pic3" src="../AllBook/${b.pic3}"/>
+        <header>
+             <%@include file="./header.jsp" %> 
+        </header>
+        <section>
+            <div class="addBook">
+                <h1>Thông Tin Sách Cần Thêm</h1>
+                <form id="addBook" action="./save.html" method="POST">
+
+                    <div>
+                        <label ><b>Tên Sách: </b></label>
+                        <input type="text" placeholder="Nhập tên sách" name="name" required>
+                    </div>
+
+
+                    <div >
+                        <label ><b>Giá Tiền:  </b></label>
+                        <input type="text" placeholder="Nhập giá tiền" name="price" required>
+                    </div>
+                    <%--
+                    Hình Ảnh:<div>
+                        <img name="pic" src="../AllBook/${b.pic}"/>
+                        <img name="pic2" src="../AllBook/${b.pic2}"/>
+                        <img name="pic3" src="../AllBook/${b.pic3}"/>
+                    </div>
+                    --%>
+
+
+                    <div>
+                        <label ><b>Nội Dung: </b></label>
+                        <textarea type="text" name="content" rows="10" cols ="80"></textarea>
+                    </div>
+                    <div>
+                        <label ><b>Phân loại: </b></label>
+                        <input type="text" placeholder="Nhập loại" name="classify" required>
+                        <button style="margin-left: 250px" type="submit">Cập nhật</button>
+                    </div>
+
+                </form>
             </div>
-            --%>
-            <br/>
-            Nội Dung: 
-            <div>
-                <textarea type="text" name="content" rows="10" cols ="90"></textarea>
-            </div><br/>
-            Classify:  <input type="text" name="classify"/> <br/>
-            <input type="submit" value="Cap Nhat"/>
-        </form>
+        </section>
+        <footer style="margin-top: 100px">
+            <%@include file="../footer.jsp" %>
+        </footer>
     </body>
-    
+
 </html>

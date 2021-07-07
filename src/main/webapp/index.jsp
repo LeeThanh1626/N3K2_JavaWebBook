@@ -10,9 +10,37 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./AllBook/css/index.css">
+
     </head>
-    <%@include file="WEB-INF/view/header.jsp" %> 
-    <body>
+    <body style="background: gainsboro;overflow-y: scroll; overflow-x: hidden;">
+        <header>
+            <%@include file="WEB-INF/view/header.jsp" %> 
+        </header>
+        <section>
+            <div class="slideshow-container">
+                <div class="mySlides fade ">
+                    <img src="./AllBook/sach3.jpg" >
+                </div>
+                <div class="mySlides fade">
+                    <img src="./AllBook/sach2.jpg" >
+                </div>
+                <div class="mySlides ">
+                    <img src="./AllBook/sach1.jpg" >
+                </div>
+                <div class="mySlides ">
+                    <img src="./AllBook/sach5.jpg" >
+                </div>   
+                <div class="mySlides ">
+                    <img src="./AllBook/sach1.jpg" >
+                </div>   
+            </div>
+
+        </section>
+        <footer>
+            <%@include file="WEB-INF/view/footer.jsp" %>   
+        </footer>
+        <script type="text/javascript" src="./AllBook/css/main.js"></script>
     </body>
+
 </html>

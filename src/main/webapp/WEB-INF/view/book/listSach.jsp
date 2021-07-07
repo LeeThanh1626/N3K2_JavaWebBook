@@ -11,35 +11,33 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./AllBook/css/listSach.css">
     </head>
-    <%@include file="./header.jsp" %>
-    <body>
-        <h1>Danh Sách Book</h1><hr/>
-        <div>
-            <div><a href="./add.html">Thêm Sách</a></div>            
-        </div>
-        <hr/>
-        <c:forEach var="b" items="${list}"> 
-            <div class="row row-cols-1 row-cols-md-5">
-                <div class="col mb-4 d-flex align-items-start flex-column bd-highlight mb-3">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <img src="./AllBook/${b.pic}"/>
+    <body class="bodyy">
+        <header><%@include file="header.jsp" %></header>
+        <section>
+            <c:forEach var="b" items="${list}"> 
+                <div class="grid-item">
+                    <div class="card">
+                        <img class="card-img" src="./AllBook/${b.pic}" alt="">
+                        <div class="card-content">
+                            <h1 class="card-header"> ${b.name}</h1>
+                            <p class="card-text">${b.price}<span>VND</span></p>
+                            <a href="./detail.html?id=${b.id}" class="card-btn">Chi tiết<span>&rarr;</span></a>
+
+                            <a href="./edit.html?id=${b.id}" class="card-btn">Sửa<span>&rarr;</span></a>
+
+                            <a href="./delete.html?id=${b.id}" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm?')" class="card-btn">Xóa<span>&rarr;</span></a>
+
+                            <a href="./addcart.html?id=${b.id}" onclick="return confirm('Sản phẩm đã được thêm vào giỏ hàng')" class="card-btn">Thêm vào giỏ hàng<span>&rarr;</span></a>
+
                         </div>
-                        <div class="p-4 bd-highlight">
-                            <h5 class="card-title"> ${b.name}</h5>
-                            <p class="card-title"> ${b.price}</p>
-                        </div>
-                        <div>
-                            <a href="./detail.html?id=${b.id}">Chi Tiết</a>
-                            <a href="./edit.html?id=${b.id}">Sửa</a>
-                            <a href="./delete.html?id=${b.id}" onclick="return confirm('Ban co chac chan muon xoa?')">Xóa</a>
-                            <a href="./addcart.html?id=${b.id}">Thêm Vào Giỏ Hàng</a>
-                        </div>
-                    </div>                 
-                </div> 
-            </div>
-        </c:forEach>
+                    </div>
+                </div>
+
+            </c:forEach>
+        </section>
+        <footer><%@include file="../footer.jsp" %></footer>
     </body>
+
 </html>

@@ -40,7 +40,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-    public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
+    public String loginProcess(HttpServletRequest request, HttpServletResponse response,
             @ModelAttribute("login") Login login) throws IOException {
         ModelAndView u = null;
         User user = userdao.validateUser(login);
@@ -56,10 +56,10 @@ public class LoginController {
             //lưu cookie lên chrome
             response.addCookie(uc);
             response.addCookie(pc);
-        } else {
-            JOptionPane.showMessageDialog(null, "Email or password error");
-            u = new ModelAndView("header");
+            return "redirect:/list.html";
         }
-        return u;
+        JOptionPane.showMessageDialog(null, "Email or password error");
+        return "redirect:/login.html";
+
     }
 }
