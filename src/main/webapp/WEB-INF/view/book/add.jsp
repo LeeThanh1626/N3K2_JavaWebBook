@@ -13,43 +13,37 @@
         <link rel="stylesheet" href="./AllBook/css/index.css">
     </head>
     <body>
+
         <header>
              <%@include file="./header.jsp" %> 
         </header>
         <section>
             <div class="addBook">
                 <h1>Thông Tin Sách Cần Thêm</h1>
-                <form id="addBook" action="./save.html" method="POST">
-
+                <form id="addBook" action="./upload.html" method="POST" enctype="multipart/form-data">
                     <div>
                         <label ><b>Tên Sách: </b></label>
                         <input type="text" placeholder="Nhập tên sách" name="name" required>
                     </div>
-
-
                     <div >
                         <label ><b>Giá Tiền:  </b></label>
                         <input type="text" placeholder="Nhập giá tiền" name="price" required>
                     </div>
-                    <%--
-                    Hình Ảnh:<div>
-                        <img name="pic" src="../AllBook/${b.pic}"/>
-                        <img name="pic2" src="../AllBook/${b.pic2}"/>
-                        <img name="pic3" src="../AllBook/${b.pic3}"/>
-                    </div>
-                    --%>
-
-
+                   Hình Ảnh: <br/>  
+                    Image1:<input type="file" id="pic" name="pic">
+                    <br/>
+                    Image2:<input type="file" id="pic2" name="pic2">
+                    <br/>
+                    Image3:<input type="file" id="pic3" name="pic3">
+                    <br/> 
                     <div>
                         <label ><b>Nội Dung: </b></label>
                         <textarea type="text" name="content" rows="10" cols ="80"></textarea>
                     </div>
                     <div>
-                        <label ><b>Phân loại: </b></label>
-                        <input type="text" placeholder="Nhập loại" name="classify" required>
                         <button style="margin-left: 250px" type="submit">Cập nhật</button>
-                    </div>
-
+                    </div>  
+                    
                 </form>
             </div>
         </section>
@@ -57,5 +51,4 @@
             <%@include file="../footer.jsp" %>
         </footer>
     </body>
-
 </html>

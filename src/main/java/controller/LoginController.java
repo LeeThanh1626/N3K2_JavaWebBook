@@ -57,9 +57,8 @@ public class LoginController {
             response.addCookie(uc);
             response.addCookie(pc);
             return "redirect:/list.html";
-        }
-        JOptionPane.showMessageDialog(null, "Email or password error");
-        return "redirect:/login.html";
-
+        } 
+            JOptionPane.showMessageDialog(null, "Email or password error");
+            return "redirect:/login.html";
     }
 }
