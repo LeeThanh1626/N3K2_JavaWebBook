@@ -72,26 +72,30 @@ public class CartController {
 
     //Xử lý button
     @RequestMapping(value = "/subbookcart")
-    public ModelAndView Sub(@RequestParam("id") int id) {
+    public String Sub(@RequestParam("id") int id) {
         int cart = dao.Sub(id);
-        return new ModelAndView("book/cart");
+        ModelAndView subcart = new ModelAndView("book/cart");
+        return "redirect:/listcart.html";
     }
 
     @RequestMapping(value = "/addbookcart")
-    public ModelAndView Add(@RequestParam("id") int id) {
+    public String Add(@RequestParam("id") int id) {
         int cart = dao.Add(id);
-        return new ModelAndView("book/cart");
+         ModelAndView add = new ModelAndView("book/cart");
+        return "redirect:/listcart.html";
     }
 
     @RequestMapping(value = "/deletebookcart")
-    public ModelAndView Detele(@RequestParam("id") int id) {
+    public String Detele(@RequestParam("id") int id) {
         int cart = dao.Delete(id);
-        return new ModelAndView("book/cart");
+        ModelAndView de = new ModelAndView("book/cart");
+        return "redirect:/listcart.html";
     }
     
     @RequestMapping(value = "/buy")
-    public ModelAndView Buy(@RequestParam("totalmoney") float totalmoney,@RequestParam("email") String email ) {
+    public String Buy(@RequestParam("totalmoney") float totalmoney,@RequestParam("email") String email ) {
         dao.Buy(totalmoney,email);
-        return new ModelAndView("book/listSach");
+        ModelAndView list = new ModelAndView("book/listSach");
+         return "redirect:/list.html";
     }
 }

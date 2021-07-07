@@ -15,7 +15,7 @@
     <body>
 
         <header>
-             <%@include file="./header.jsp" %> 
+            <%@include file="./header.jsp" %> 
         </header>
         <section>
             <div class="addBook">
@@ -26,16 +26,19 @@
                         <input type="text" placeholder="Nhập tên sách" name="name" required>
                     </div>
                     <div >
-                        <label ><b>Giá Tiền:  </b></label>
+                        <label ><b>Giá Tiền:   </b></label>
                         <input type="text" placeholder="Nhập giá tiền" name="price" required>
                     </div>
-                   Hình Ảnh: <br/>  
-                    Image1:<input type="file" id="pic" name="pic">
-                    <br/>
-                    Image2:<input type="file" id="pic2" name="pic2">
-                    <br/>
-                    Image3:<input type="file" id="pic3" name="pic3">
-                    <br/> 
+                    <div>
+                        <label ><b>Hình Ảnh: </b></label> <br/>  
+                        Image1:<input type="file" id="pic" name="pic">
+                        <br/>
+                        Image2:<input type="file" id="pic2" name="pic2">
+                        <br/>
+                        Image3:<input type="file" id="pic3" name="pic3">
+                        <br/>   
+                    </div>
+
                     <div>
                         <label ><b>Nội Dung: </b></label>
                         <textarea type="text" name="content" rows="10" cols ="80"></textarea>
@@ -43,7 +46,7 @@
                     <div>
                         <button style="margin-left: 250px" type="submit">Cập nhật</button>
                     </div>  
-                    
+
                 </form>
             </div>
         </section>

@@ -24,12 +24,15 @@
                     <img class="card-img" src="./AllBook/${b.pic2}"/>
                     <img class="card-img" src="./AllBook/${b.pic3}"/>
                 </div>
-                 <div class="card-content">
-                        <h1 class="card-header"> ${b.name}</h1>
-                        <p class="card-text">${b.price}<span>VND</span></p>
-                        <p class="card-text"> ${b.content}</p>
-                        <a href="./addcart.html?id=${b.id}" onclick="return confirm('Sản phẩm đã được thêm vào giỏ hàng')" class="card-btn">Thêm vào giỏ hàng<span>&rarr;</span></a>
-                    </div>
+                <div class="card-content">
+                    <label ><b>Tên Sách:  </b></label>   
+                    <h1 class="card-header"> ${b.name}</h1>
+                    <label ><b>Giá Tiền:  </b></label>  
+                    <p class="card-text"> ${b.price}<span>VND</span></p>
+                    <label ><b>Nội Dung:  </b></label>   <br/>
+                    <p class="card-text"> ${b.content}</p>
+                    <a href="./addcart.html?id=${b.id}" onclick="return confirm('Sản phẩm đã được thêm vào giỏ hàng')" class="card-btn">Thêm vào giỏ hàng<span>&rarr;</span></a>
+                </div>
             </div>
         </section>
         <footer>

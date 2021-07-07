@@ -89,18 +89,16 @@ public class BookController {
     public String Saves(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, FileUploadException, Exception {
         Book b = new Book();
-////        cách này lưu đc ảnh nhưng không lưu đc data
-//        //tạo nơi lưu ảnh
-//        String folderupload = request.getServletContext().getRealPath("/AllBook");
-//        Path uploadpath = Paths.get(folderupload);
-//        //nếu null tạo file tự động
-//        if (!Files.exists(uploadpath)) {
-//            Files.createDirectory(uploadpath);
-//        }
+//        cách này lưu đc ảnh nhưng không lưu đc data
+        //tạo nơi lưu ảnh
+        String folderupload = request.getServletContext().getRealPath("/AllBook");
+        Path uploadpath = Paths.get(folderupload);
+        //nếu null tạo file tự động
+        if (!Files.exists(uploadpath)) {
+            Files.createDirectory(uploadpath);
+        }
         DiskFileItemFactory factory = new DiskFileItemFactory();
         ServletFileUpload upload = new ServletFileUpload(factory);
-//        upload.setFileSizeMax(512 * 512);
-//        upload.setSizeMax(512 * 512 * 3);
         List<FileItem> multiparts = upload.parseRequest(request);
         for (FileItem item : multiparts) {
             if (!item.isFormField()) {

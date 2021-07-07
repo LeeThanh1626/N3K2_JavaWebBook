@@ -21,8 +21,8 @@
         <section>
             <div  >
                 <h1>Thông Tin Sách</h1>
-                <form id="editBook" action="./upload.html" method="POST">
-
+                <form id="editBook" action="./upload.html" method="POST" enctype="multipart/form-data">
+                    <input hidden="id" type="text" name="id" value="${b.id}">
                     <div>
                         <label ><b>Tên Sách: </b></label>
                         <input type="text" name="name" value="${b.name}" required>
@@ -31,7 +31,7 @@
                         <label ><b>Giá Tiền:  </b></label>
                         <input type="text" name="price" value="${b.price}" required>
                     </div>
-                    Hình Ảnh:<div>
+                    <label ><b>Hình Ảnh:  </b></label><div>
                         <img name="pic" src="./AllBook/${b.pic}"/>
                         <img name="pic2" src="./AllBook/${b.pic2}"/>
                         <img name="pic3" src="./AllBook/${b.pic3}"/>
