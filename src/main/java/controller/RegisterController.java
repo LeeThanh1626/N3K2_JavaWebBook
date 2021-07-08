@@ -19,9 +19,30 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  *
- * @author Dell 7450
+ * @author DELL
  */
 @Controller
 public class RegisterController {
+    @Autowired
+    UserDAO userdao;
 
+    //Return view register
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
+        ModelAndView mav = new ModelAndView("user/register");
+        mav.addObject("user", new User());
+        return mav;
+    }
+
+    //Add new user and return view register
+    @RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
+    public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
+            @ModelAttribute("user") User user) {
+        userdao.register(user);
+        if (user.getId() == -1) {
+            return new ModelAndView("user/register");
+        } else {     
+            return new ModelAndView("user/login");
+        }
+    }
 }

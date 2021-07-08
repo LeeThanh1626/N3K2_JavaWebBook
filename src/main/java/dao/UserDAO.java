@@ -25,6 +25,19 @@ public class UserDAO {
 
     JdbcTemplate jdbctemplate;
 
+    public void register(User user) {
+        String sql1 = "select * from users where email='" + user.getEmail() + "'";
+        List<User> users = jdbctemplate.query(sql1, new UserMapper());
+        if (users.isEmpty()) {
+            String sql = String.format("insert into users(email, password) values('%s','%s')", user.getEmail(), user.getPassword());
+            jdbctemplate.update(sql);
+        } else {
+            user.setId(-1);
+            JFrame frame = new JFrame("Swing Tester");
+            JOptionPane.showMessageDialog(frame, "User đã tồn tại", "", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     public void setJdbctemplate(JdbcTemplate jdbctemplate) {
         this.jdbctemplate = jdbctemplate;
     }
