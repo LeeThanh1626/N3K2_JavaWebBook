@@ -5,7 +5,7 @@
  */
 package controller;
 
-import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
+//import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import dao.UserDAO;
 import java.util.Locale;
 import javax.servlet.http.Cookie;
