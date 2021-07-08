@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author Dell 7450
  */
 public class User implements Serializable{
-
+    
     public int getId() {
         return id;
     }

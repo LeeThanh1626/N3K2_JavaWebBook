@@ -29,7 +29,14 @@ public class UserDAO {
         this.jdbctemplate = jdbctemplate;
     }
 
+    public User validateUser(Login login) {
+        String sql = "select * from users where email='" + login.getEmail() + "' and password='" + login.getPassword()
+                + "'";
 
+        List<User> users = jdbctemplate.query(sql, new UserMapper());
+        return users.size() > 0 ? users.get(0) : null;
+    }
+    
     public User Search_User(String email) {
         String sql = "select * from users where email = ?";
         return jdbctemplate.queryForObject(sql, new Object[]{email}, new BeanPropertyRowMapper<>(User.class));    
@@ -42,5 +49,15 @@ public class UserDAO {
             String sql = String.format("UPDATE users set money='%f' where email='%s' and password = '%s'",newmoney, user.getEmail(),user.getPassword());
             jdbctemplate.update(sql);
         }
+    }
+}
+
+class UserMapper implements RowMapper<User> {
+    public User mapRow(ResultSet rs, int arg1) throws SQLException {
+        User user = new User();
+        user.setEmail(rs.getString("email"));
+        user.setPassword(rs.getString("password"));
+        user.setMoney(rs.getDouble("money"));
+        return user;
     }
 }
